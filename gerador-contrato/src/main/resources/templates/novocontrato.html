@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Gerador de contratos</title>
+
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+<link th:rel="stylesheet"
+	th:href="@{/assets/jquery-steps/jquery.steps.css} " />
+</head>
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+		<div class="container">
+			<a class="navbar-brand" href="/">Gerador de contratos</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a class="nav-link"
+						href="/contratos/index">Home <span class="sr-only">(current)</span>
+					</a></li>
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col">
+				<h2 class="mt-5">Geração de contrato</h2>
+
+				<form id="example-advanced-form" th:action="@{/contratos}"
+					method="POST" th:object="${contrato}">
+					<h3>CONTRATADA</h3>
+					<fieldset>
+						<legend>CONTRATADA</legend>
+
+						<div class="row">
+							<div class="col-5">
+
+								<div class="form-group">
+									<label for="contratadarazaoSocial">RAZÃO SOCIAL *</label> <input
+										id="contratadarazaoSocial" name="contratadarazaoSocial"
+										th:field="*{contratada.razaoSocial}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratada.nomeFantasia">NOME FANTASIA*</label> <input
+										id="contratada.nomeFantasia" name="contratada.nomeFantasia"
+										th:field="*{contratada.nomeFantasia}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratada.cnpj">CNPJ *</label> <input
+										id="contratada.cnpj" name="contratada.cnpj"
+										th:field="*{contratada.cnpj}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+								
+								<div class="form-group">
+									<label for="contratada.cnpj">INÍCIO CONTRATO *</label> <input
+										id="data" name="data"
+										th:field="*{dataInicio}" type="date"
+										class="form-control required" autocomplete="off">
+								</div>
+
+
+							
+							</div>
+
+
+
+							<div class="col-5">
+								<div class="form-group">
+									<label for="contratada.endereco.logradouro">ENDEREÇO *</label>
+									<input id="contratada.endereco.logradouro"
+										name="contratada.endereco.logradouro"
+										th:field="*{contratada.endereco.logradouro}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratada.endereco.numero">NÚMERO *</label> <input
+										id="contratada.endereco.numero"
+										name="contratada.endereco.numero"
+										th:field="*{contratada.endereco.numero}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratada.endereco.cep">CEP *</label> <input
+										id="contratada.endereco.cep" name="contratada.endereco.cep"
+										th:field="*{contratada.endereco.cep}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratada.endereco.cidade">CIDADE *</label> <input
+										id="contratada.endereco.cidade"
+										name="contratada.endereco.cidade"
+										th:field="*{contratada.endereco.cidade}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+								<div class="form-group">
+									<label for="contratada.endereco.uf">ESTADO *</label> <input
+										id="contratada.endereco.uf" name="contratada.endereco.uf"
+										th:field="*{contratada.endereco.uf}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+
+
+
+							</div>
+						</div>
+						<p>(*) campos obrigatórios.</p>
+					</fieldset>
+
+					<h3>CONTRATANTE</h3>
+					<fieldset>
+						<legend>CONTRATANTE</legend>
+
+						<div class="row">
+							<div class="col-5">
+
+
+								<div class="form-group">
+									<label for="contratante.razaoSocial">RAZÃO SOCIAL *</label> <input
+										id="contratante.razaoSocial" name="contratante.razaoSocial"
+										th:field="*{contratante.razaoSocial}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratante.nomeFantasia">NOME FANTASIA*</label> <input
+										id="contratante.nomeFantasia" name="contratante.nomeFantasia"
+										th:field="*{contratante.nomeFantasia}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratante.cnpj">CNPJ *</label> <input
+										id="contratante.cnpj" name="contratante.cnpj"
+										th:field="*{contratante.cnpj}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="qntdLojas">QUANTIDADE DE LOJAS *</label> <input
+										id="qntdLojas" name="qntdLojas" th:field="*{qntdLojas}"
+										type="text" class="form-control required" autocomplete="off">
+								</div>
+
+							</div>
+							<div class="col-5">
+								<div class="form-group">
+									<label for="contratante.endereco.logradouro">ENDEREÇO *</label>
+									<input id="contratante.endereco.logradouro"
+										name="contratante.endereco.logradouro"
+										th:field="*{contratante.endereco.logradouro}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratante.endereco.numero">NÚMERO *</label> <input
+										id="contratante.endereco.numero"
+										name="contratante.endereco.numero"
+										th:field="*{contratante.endereco.numero}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratante.endereco.cep">CEP *</label> <input
+										id="contratante.endereco.cep" name="contratante.endereco.cep"
+										th:field="*{contratante.endereco.cep}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+								<div class="form-group">
+									<label for="contratante.endereco.cidade">CIDADE *</label> <input
+										id="contratante.endereco.cidade"
+										name="contratante.endereco.cidade"
+										th:field="*{contratante.endereco.cidade}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+								<div class="form-group">
+									<label for="contratante.endereco.uf">ESTADO *</label> <input
+										id="contratante.endereco.uf" name="contratante.endereco.uf"
+										th:field="*{contratante.endereco.uf}" type="text"
+										class="form-control required" autocomplete="off">
+								</div>
+
+
+
+
+							</div>
+						</div>
+						<p>(*) campos obrigatórios.</p>
+					</fieldset>
+
+					<h3>TESTEMUNHAS</h3>
+					<fieldset>
+						<legend>TESTEMUNHAS</legend>
+
+						<div class="col-5">
+							<div class="form-group">
+								<label for="primeiraTestemunhanome">NOME TESTEMUNHA 1 *</label>
+								<input id="primeiraTestemunhanome" name="primeiraTestemunhanome"
+									th:field="*{primeiraTestemunha.nome}" type="text"
+									class="form-control required" autocomplete="off">
+							</div>
+
+							<div class="form-group">
+								<label for="primeiraTestemunhacpf">CPF TESTEMUNHA 1 *</label> <input
+									id="primeiraTestemunhacpf" name="primeiraTestemunhacpf"
+									th:field="*{primeiraTestemunha.cpf}" type="text"
+									class="form-control required" autocomplete="off">
+							</div>
+
+							<div class="form-group">
+								<label for="segundaTestemunhanome">NOME TESTEMUNHA 2 *</label> <input
+									id="segundaTestemunhanome" name="segundaTestemunhanome"
+									th:field="*{segundaTestemunha.nome}" type="text"
+									class="form-control required" autocomplete="off">
+							</div>
+
+							<div class="form-group">
+								<label for="segundaTestemunhacpf">CPF TESTEMUNHA 2 *</label> <input
+									id="segundaTestemunhacpf" name="segundaTestemunhacpf"
+									th:field="*{segundaTestemunha.cpf}" type="text"
+									class="form-control required" autocomplete="off">
+							</div>
+						</div>
+						<p>(*) campos obrigatórios.</p>
+					</fieldset>
+
+					<h3>VALORES</h3>
+					<fieldset>
+						<legend>VALORES</legend>
+
+						<div class="col-sm">
+							<div class="form-group">
+								<label for="valPriFaixaLucro">VALOR DA MENSALIDADE PARA
+									FATURAMENTO ENTRE R$ 100,00 E R$ 150,999 *</label> <input
+									id="valPriFaixaLucro" name="valPriFaixaLucro"
+									th:field="*{valPriFaixaLucro}" type="text"
+									class="form-control required" autocomplete="off">
+							</div>
+
+							<div class="form-group">
+								<label for="valSegFaixaLucro">VALOR DA MENSALIDADE PARA
+									FATURAMENTO ENTRE R$ 151.000 até R$ 300.999 *</label> <input
+									id="valSegFaixaLucro" name="valSegFaixaLucro"
+									th:field="*{valSegFaixaLucro}" type="text"
+									class="form-control required" autocomplete="off">
+							</div>
+
+							<div class="form-group">
+								<label for="segundaTestemunhanome">VALOR DA MENSALIDADE
+									PARA FATURAMENTO ACIMA de R$ 301.000 *</label> <input
+									id="segundaTestemunhanome" name="valTerFaixaLucro"
+									th:field="*{valTerFaixaLucro}" type="text"
+									class="form-control required" autocomplete="off">
+							</div>
+
+							<div class="form-group">
+								<label for="valFinal">VALOR DA MENSALIDADE PARA
+									QUANTIDADE DE LOJAS *</label> <input id="valFinal" name="valFinal"
+									th:field="*{valFinal}" type="text"
+									class="form-control required" autocomplete="off">
+							</div>
+
+							<div class="form-group">
+								<label for="valorPorExtenso">VALOR DA MENSALIDADE PARA
+									QUANTIDADE DE LOJAS POR EXTENSO *</label> <input id="valorPorExtenso"
+									name="valorPorExtenso" th:field="*{valorPorExtenso}"
+									type="text" class="form-control required" autocomplete="off">
+							</div>
+						</div>
+						<p>(*) campos obrigatórios.</p>
+					</fieldset>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<script th:src="@{/assets/jquery-steps/jquery.steps.min.js}"></script>
+	<script th:src="@{/assets/jquery-validate/jquery.validate.min.js}"></script>
+
+	<script>
+		var form = $("#example-advanced-form").show();
+
+		form.steps(
+				{
+					headerTag : "h3",
+					bodyTag : "fieldset",
+					transitionEffect : "slideLeft",
+					onStepChanging : function(event, currentIndex, newIndex) {
+						// Allways allow previous action even if the current form is not valid!
+						if (currentIndex > newIndex) {
+							console.log("1");
+							return true;
+						}
+						// Forbid next action on "Warning" step if the user is to young
+						/*    if (newIndex === 3) {
+						      return false;
+						  }  */
+						// Needed in some cases if the user went back (clean up)
+						if (currentIndex < newIndex) {
+							console.log("2");
+							// To remove error styles
+							form.find(".body:eq(" + newIndex + ") label.error")
+									.remove();
+							form.find(".body:eq(" + newIndex + ") .error")
+									.removeClass("error");
+						}
+						form.validate().settings.ignore = ":disabled,:hidden";
+						return form.valid();
+					},
+					onStepChanged : function(event, currentIndex, priorIndex) {
+						console.log("3");
+						// Used to skip the "Warning" step if the user is old enough.
+						/*  if (currentIndex === 2) {
+						     form.steps("next");
+						 } */
+						// Used to skip the "Warning" step if the user is old enough and wants to the previous step.
+						/* if (currentIndex === 2 && priorIndex === 3) {
+						    form.steps("previous");
+						} */
+					},
+					onFinishing : function(event, currentIndex) {
+						console.log("4");
+
+						form.validate().settings.ignore = ":disabled";
+						return form.valid();
+					},
+					onFinished : function(event, currentIndex) {
+						console.log("5");
+
+						form.submit();
+					}
+				}).validate({
+			errorPlacement : function errorPlacement(error, element) {
+				element.before(error);
+			},
+			rules : {
+				confirm : {
+
+					equalTo : "#password-2"
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Gerador de contratos</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/assets/jquery-steps/jquery.steps.css} "/>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Gerador de contratos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/contratos/cadastrar">Cadastrar Contrato</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="index" class=" text-center mb-4 ">
+            <br>
+			<img class="mb-4" th:src="@{/image/contrato.png}" alt="logo">
+			<h1 class="h3 mb-3 font-weight-normal" >Software para teste de seleção </h1>
+
+			<p class="font-weight-lighter">Preenche um tipo de contrato.</p>
+			<p class="font-weight-lighter">Para começar click em Cadastrar Contrato.</p>
+							
+			
+</div>
+
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/jquery-steps/jquery.steps.min.js}"></script>
+<script th:src="@{assets/jquery-validate/jquery.validate.min.js}"></script>
+
+
+</body>
+</html>
