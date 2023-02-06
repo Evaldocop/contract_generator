@@ -42,7 +42,7 @@ public class TratamentoArquivo {
 
 		if ((linha.contains("{") || linha.contains("}"))) {
 
-			/* verica se tem */
+			
 			if (linha.contains("{")) {
 				i = linha.indexOf('{');
 
@@ -50,40 +50,37 @@ public class TratamentoArquivo {
 
 					if (linha.substring(i, linha.length()).contains("}")) {
 						f = linha.indexOf('}');
-						// pego uma chave fecha if1
+						
 						if (f == (linha.length() - 1)) {
 							chave = linha.substring(i, linha.length()).replace(" ", "");
 							linha = linha.replace(chave, "");
-							System.out.println("chave2 >>>" + chave);
-							// return editarLinha(parametros, linha, false);
+							
 						} else {
 							f = f + 2;
 							linha = linha.replace(linha.substring(i, f), parametros.get(linha.substring(i, f)));
-							// return editarLinha(parametros, linha, false);
+							
 						}
 
-						// chave vazia linha inicio de chave sem } -- coloco
-						// toda linha na chave
+					
 					} else {
 
 						chave = linha.substring(i, linha.length()).replace(" ", "");
 						linha = linha.replace(chave, "");
 
-						System.out.println("chave3 >>>" + chave);
-						// return editarLinha(parametros, linha, false);
+						
 
 					}
-					// chave contem algo
+					
 				} else {
 					if (linha.contains("}")) {
 						f = linha.indexOf('}');
 						i = 0;
 						if (f == (linha.length() - 1))
-							f = f + 1;// esta no fim da linha
+							f = f + 1;
 						else
-							f = f + 2; // esta no meio da linha
+							f = f + 2;
 						chave = chave.concat(linha.substring(i, f)).replace(" ", "");
-						System.out.println("chave3.1 >>>" + chave);
+						
 						if (chave.contains("{{") && chave.contains("}}")) {
 							linha = linha.replace(linha.substring(i, f), parametros.get(chave));
 							chave = "";
@@ -99,9 +96,9 @@ public class TratamentoArquivo {
 
 				}
 
-				// ou fim de chave com } ou }}
+				
 			} else if (linha.contains("}") && !chave.equals("")) {
-				System.out.println("chave4 >>>" + chave);
+				
 
 				f = linha.indexOf('}');
 				if (f == linha.length() - 1) {
@@ -109,7 +106,7 @@ public class TratamentoArquivo {
 						i = 0;
 					chave = chave.concat(linha.substring(i, linha.length())).replace(" ", "");
 
-					System.out.println("chave5 >>>" + chave);
+					
 
 					if (chave.contains("{{") && chave.contains("}}")) {
 						linha = linha.replace(linha.substring(i, linha.length()), parametros.get(chave));
@@ -121,13 +118,13 @@ public class TratamentoArquivo {
 					f = f + 2;
 					if (i == -1)
 						i = 0;
-					System.out.println("chave6 >>>" + chave);
+					
 					chave = chave.concat(linha.substring(i, f)).replace(" ", "").replace(" ", "");
-					// System.out.println(">>>concat"+chave.trim() );
-					System.out.println("chave7 >>>" + chave);
+					
+				
 					linha = linha.replace(linha.substring(i, f), parametros.get(chave));
 					chave = "";
-					// return editarLinha(parametros, linha, false);
+				
 				}
 
 			}
@@ -139,10 +136,10 @@ public class TratamentoArquivo {
 					chave = "";
 				} else
 					chave = chave.concat(linha).replace(" ", "");
-				System.out.println("chave1 >>>" + chave);
+				
 				linha = "";
 			}
-			System.out.println(">>>saida processada -> " + linha);
+		
 			return linha;
 		}
 	}
@@ -181,7 +178,7 @@ public class TratamentoArquivo {
 
 					String linha = r.getText(0);
 					if (linha != null) {
-						System.out.println(">>>linha entrada >>> " + linha);
+						
 						linha = editarLinha(parametros, linha, true);
 						r.setText(linha, 0);
 					}
@@ -196,7 +193,7 @@ public class TratamentoArquivo {
 			fos.close();
 			fis.close();
 			convertToPdff(absolutePath);
-			System.out.println(">>>chave final " + chave);
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -224,11 +221,10 @@ public class TratamentoArquivo {
 
 			for (XWPFParagraph p : doc.getParagraphs()) {
 
-				for (XWPFRun r : p.getRuns()) { // Substituir o texto
+				for (XWPFRun r : p.getRuns()) {
 
 					String linha = r.getText(0);
-					if (linha != null)
-						System.out.println(linha + "---" + linha.length());
+					
 
 				}
 
