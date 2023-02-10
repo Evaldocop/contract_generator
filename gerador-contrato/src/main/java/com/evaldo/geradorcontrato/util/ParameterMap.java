@@ -38,7 +38,7 @@ public class ParameterMap {
 		parametros.put("{{CONTRATANTE_RAZAO_SOCIAL}}", contrato.getContratante().getRazaoSocial());
 		parametros.put("{{valor1}}", contrato.getValPriFaixaLucro().toString());
 		parametros.put("{{valor2}}", contrato.getValSegFaixaLucro().toString());
-		parametros.put("{{valor3}", contrato.getValTerFaixaLucro().toString());
+		parametros.put("{{valor3}}", contrato.getValTerFaixaLucro().toString());
 		parametros.put("{{valor_final}}", contrato.getValFinal().toString());
 		parametros.put("{{qtde_lojas}}", contrato.getQntdLojas().toString());
 		parametros.put("{{valor_por_extenso}}", contrato.getValorPorExtenso());
