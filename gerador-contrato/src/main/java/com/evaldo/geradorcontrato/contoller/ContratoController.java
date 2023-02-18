@@ -1,19 +1,22 @@
 package com.evaldo.geradorcontrato.contoller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.evaldo.geradorcontrato.domain.Contrato;
 import com.evaldo.geradorcontrato.domain.Empresa;
 import com.evaldo.geradorcontrato.domain.Pessoa;
+import com.evaldo.geradorcontrato.dto.EnderecoDto;
 import com.evaldo.geradorcontrato.service.ContratoService;
 import com.evaldo.geradorcontrato.service.EmpresaService;
+import com.evaldo.geradorcontrato.service.EnderecoService;
 import com.evaldo.geradorcontrato.service.PessoaService;
-import com.evaldo.geradorcontrato.util.TratamentoArquivo;
 
 
 
@@ -29,6 +32,8 @@ public class ContratoController {
 
 	@Autowired
 	private PessoaService pessoaService;
+	@Autowired
+	private EnderecoService enderecoService;
 	
 	
 
@@ -86,6 +91,11 @@ public class ContratoController {
 		
 		
 		return "redirect:/";
+	}
+	
+	@GetMapping("/endereco/{cep}")
+	public ResponseEntity<EnderecoDto> biuscarEndereco(@PathVariable String cep){
+		return enderecoService.buscarEnderecoPorCep(cep);
 	}
 
 }
