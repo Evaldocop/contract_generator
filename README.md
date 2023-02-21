@@ -1,5 +1,4 @@
 
-![contract_generator](https://img.freepik.com/vetores-gratis/homem-de-negocios-apertando-o-contrato-assinado_3446-646.jpg?w=740&t=st=1677022644~exp=1677023244~hmac=37f405e531dc4e6841398a525fac4d2093625019153870bda005dc45d6194e66)
 
 # Gerador de Contrato
 Projeto criado para avalição em teste de seleção
@@ -27,4 +26,4 @@ Projeto criado para avalição em teste de seleção
  
  #### Para gerar o pdf e necessário o OpenOffice
 
-
+![contract_generator](https://img.freepik.com/vetores-gratis/homem-de-negocios-apertando-o-contrato-assinado_3446-646.jpg?w=740&t=st=1677022644~exp=1677023244~hmac=37f405e531dc4e6841398a525fac4d2093625019153870bda005dc45d6194e66)
