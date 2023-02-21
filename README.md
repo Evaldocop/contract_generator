@@ -16,7 +16,7 @@ Projeto criado para avalição em teste de seleção
  * Jquery
  * Lombok
  * Apache Poi
- * JODConvert
- * OpenOffice
+ * JODConvert 3.0
+ * OpenOffice 3.3
 
 
