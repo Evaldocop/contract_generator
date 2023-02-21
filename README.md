@@ -25,7 +25,7 @@ Projeto criado para Geração de contrato.
  * OpenOffice 3.3
  
  
- __Nesse Projeto foi implementado um cliente da Api viacep.com.br para tornar o preenchimento de endereço facilitado.__
+ __Nesse Projeto foi implementado um cliente da Api pública viacep.com.br para tornar o preenchimento de endereço facilitado.__
  
  #### Para gerar o pdf e necessário o OpenOffice
  
