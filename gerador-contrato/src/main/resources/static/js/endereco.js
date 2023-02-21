@@ -1,5 +1,17 @@
 $(document).ready(function() {
-
+	///doc masc https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html
+	$("#contratada-endereco-cep, #contratante-endereco-cep").mask("99.999-999",{placeholder: "__.___-___"})
+	
+	/*	$("#contratada-endereco-cep").val("__.___-__");
+	 * $("#contratada-endereco-cep").on("keyup", function(e)
+			{
+			    $(this).val(
+			        $(this).val()
+			        .replace(/\D/g, '')
+			        .replace(/^(\d{2})(\d{3})?(\d{3})?/, "$1.$2-$3"));
+	});*/
+	
+	
 	$("#contratada-endereco-cep").on('change', function() {
 		console.log("ENTREI");
 		var cep = $(this).val();

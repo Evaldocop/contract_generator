@@ -18,6 +18,8 @@ public class EnderecoCliente {
     private RestTemplate restTemplate = new RestTemplate(); 
     private final String url = "http://viacep.com.br/ws/{cep}/json/";     
     public ResponseEntity<EnderecoDto> buscarEnderecoPorCep(String cep){ 
+    	cep=cep.replace(".", "");
+    	cep=cep.replace("-", "");
     	Map<String,String> param=new HashMap<String,String>();
     	param.put("cep",cep);
         return restTemplate.getForEntity(url, EnderecoDto.class,param);

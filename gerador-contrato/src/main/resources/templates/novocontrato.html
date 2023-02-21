@@ -8,6 +8,8 @@
 	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
 <link th:rel="stylesheet"
 	th:href="@{/assets/jquery-steps/jquery.steps.css} " />
+
+
 </head>
 <body>
 
@@ -62,8 +64,8 @@
 								</div>
 
 								<div class="form-group">
-									<label for="contratada.cnpj">CNPJ *</label> <input
-										id="contratada.cnpj" name="contratada.cnpj"
+									<label for="contratada-cnpj">CNPJ *</label> <input
+										id="contratada-cnpj" name="contratada-cnpj" th:maxlength="18"
 										th:field="*{contratada.cnpj}" type="text"
 										class="form-control required" autocomplete="off">
 								</div>
@@ -84,7 +86,7 @@
 
 								<div class="form-group">
 									<label for="contratada-endereco-cep">CEP *</label> <input
-										id="contratada-endereco-cep" name="contratada-endereco-cep"
+										id="contratada-endereco-cep" name="contratada-endereco-cep" th:maxlength="10" 
 										th:field="*{contratada.endereco.cep}" type="text"
 										class="form-control required" autocomplete="off">
 								</div>
@@ -151,23 +153,23 @@
 								</div>
 
 								<div class="form-group">
-									<label for="contratante.cnpj">CNPJ *</label> <input
-										id="contratante.cnpj" name="contratante.cnpj"
+									<label for="contratante-cnpj">CNPJ *</label> <input
+										id="contratante-cnpj" name="contratante-cnpj" th:maxlength="18" 
 										th:field="*{contratante.cnpj}" type="text"
-										class="form-control required" autocomplete="off">
+										class="form-control required" autocomplete="off" >
 								</div>
 
 								<div class="form-group">
-									<label for="qntdLojas">QUANTIDADE DE LOJAS *</label> <input
+									<label for="qntdLojas">QUANTIDADE DE LOJAS *</label> <input 
 										id="qntdLojas" name="qntdLojas" th:field="*{qntdLojas}"
-										type="text" class="form-control required" autocomplete="off">
+										type="Number" class="form-control required" autocomplete="off">
 								</div>
 
 							</div>
 							<div class="col-5">
 								<div class="form-group">
 									<label for="contratante-endereco-cep">CEP *</label> <input
-										id="contratante-endereco-cep" name="contratante-endereco-cep"
+										id="contratante-endereco-cep" name="contratante-endereco-cep" th:maxlength="10" 
 										th:field="*{contratante.endereco.cep}" type="text"
 										class="form-control required" autocomplete="off">
 								</div>
@@ -269,9 +271,9 @@
 							</div>
 
 							<div class="form-group">
-								<label for="segundaTestemunhanome">VALOR DA MENSALIDADE
+								<label for="valTerFaixaLucro">VALOR DA MENSALIDADE
 									PARA FATURAMENTO ACIMA de R$ 301.000 *</label> <input
-									id="segundaTestemunhanome" name="valTerFaixaLucro"
+									id="valTerFaixaLucro" name="valTerFaixaLucro"
 									th:field="*{valTerFaixaLucro}" type="text"
 									class="form-control required" autocomplete="off">
 							</div>
@@ -304,10 +306,13 @@
 	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	<script th:src="@{/assets/jquery-steps/jquery.steps.min.js}"></script>
 	<script th:src="@{/assets/jquery-validate/jquery.validate.min.js}"></script>
+	<script th:src="@{/js/jquery.mask.js}"></script>
 	<script th:src="@{/js/endereco.js}"></script>
 	<script th:src="@{/js/steps.js}"></script>
+	<script th:src="@{/js/empresa.js}"></script>
+	<script th:src="@{/js/pessoa.js}"></script>
 
-	
+
 
 </body>
 </html>
