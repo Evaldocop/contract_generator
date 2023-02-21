@@ -7,6 +7,9 @@ Projeto criado para avalição em teste de seleção
 
 ### Tecnologias utilizadas
  * Thymeleaf 
+ * Html
+ * javascript
+ * css
  * Spring Boot
  * Spring Data
  * Spring web mvc
@@ -18,5 +21,7 @@ Projeto criado para avalição em teste de seleção
  * Apache Poi
  * JODConvert 3.0
  * OpenOffice 3.3
+ 
+ #### Para gerar o pdf e necessário o OpenOffice
 
 
