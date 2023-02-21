@@ -1,7 +1,7 @@
 
 
 # Gerador de Contrato
-Projeto criado para avalição em teste de seleção
+Projeto criado para Geração de contrato.
 ## Funcionalidades
  -  Substitui palavras chaves no formato __{{key}}__ em um texto(contrato) de um arquivo .docx atracés de um formulário html.
  -  Gera o arquivo modificado em PDF.
