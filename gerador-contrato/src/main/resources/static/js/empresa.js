@@ -2,7 +2,7 @@ $(document).ready(function() {
 	///doc masc https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html
 	$("#contratada-cnpj , #contratante-cnpj").mask("99.999.999/9999-99", {placeholder: "__.___.___/____-__"})
 	
-	$("#valPriFaixaLucro,#valSegFaixaLucro,#valTerFaixaLucro,#valFinal").mask("##0,00", {reverse: true});
+	//$("#valPriFaixaLucro,#valSegFaixaLucro,#valTerFaixaLucro,#valFinal").mask('#.##0,00',{reverse: true});
 	/*$("#contratada-cnpj").on("keyup", function(e)
 			{
 			    $(this).val(
