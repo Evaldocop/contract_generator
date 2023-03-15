@@ -8,7 +8,7 @@ Projeto criado para Geração de contrato.
 
 
 ### Tecnologias utilizadas
- * Thymeleaf - https://frontbackend.com/thymeleaf/spring-boot-bootstrap-thymeleaf-wizard
+ * Thymeleaf 
  * Html
  * javascript
  * css
@@ -23,7 +23,7 @@ Projeto criado para Geração de contrato.
  * Apache Poi
  * JODConvert 3.0
  * OpenOffice 3.3
- 
+* https://frontbackend.com/thymeleaf/spring-boot-bootstrap-thymeleaf-wizard 
  
  __Nesse Projeto foi implementado um cliente da Api pública viacep.com.br para tornar o preenchimento de endereço facilitado.__
  
